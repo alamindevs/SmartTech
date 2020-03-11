@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         	[	
         		'name' => 'MD.Al-Amin Hawladar',
         		'email' => 'alamingeneral455@gmail.com',
-        		'username' => 'mdalmain',
+        		'username' => 'mdalamin',
         		'phone' => '0172415312',
         		'address' => 'Mirpur-14',
         		'image' => Null,
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
         		'password' => Hash::make('12345678'),
         	],[
         		'name' => 'MD.Al-Amin',
-        		'email' => 'almain@gmail.com',
+        		'email' => 'alamin@gmail.com',
         		'username' => 'alamin',
         		'phone' => '01876619765',
         		'address' => 'Mirpur-14',
