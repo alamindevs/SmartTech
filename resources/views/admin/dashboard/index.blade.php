@@ -2,6 +2,10 @@
 
 @section('pageTitle','Admin Deshboard')
 
+@push('css')
+    <link href="{{ asset('contants/admin') }}/assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+@endpush
+
 @section('content')
 
 <div class="container-fluid">
@@ -341,3 +345,11 @@
 </div>
 
 @endsection
+
+@push('js')
+<script src="{{ asset('contants/admin') }}/assets/plugins/moment/moment.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/plugins/apexcharts/apexcharts.min.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/pages/jquery.eco_dashboard.init.js"></script>
+@endpush
