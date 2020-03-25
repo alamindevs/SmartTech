@@ -8,25 +8,10 @@
 
 @section('content')
 
-<div class="container-fluid">
-    <!-- Page-Title -->
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="page-title-box">
-                <div class="float-right">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Metrica</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Ecommerce</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                </div>
-                <h4 class="page-title">Dashboard</h4></div>
-            <!--end page-title-box-->
-        </div>
-        <!--end col-->
-    </div>
-    <!--end row-->
-    <!-- end page title end breadcrumb -->
+    @component('components.admin.breadcrumb')
+    <li class="breadcrumb-item active">Dashboard</li>
+    @endcomponent
+
     <div class="row">
         <div class="col-lg-3">
             <div class="card card-eco">
@@ -342,7 +327,7 @@
         <!--end col-->
     </div>
     <!--end row-->
-</div>
+
 
 @endsection
 

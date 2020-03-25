@@ -20,15 +20,17 @@
 </head>
 <body>
     <!-- Top Bar Start -->
-    @include('admin.partials.topbar')
+    @include('layouts.partials.admin.topbar')
     <!-- Top Bar End -->
     <div class="page-wrapper">
         <!-- Left Sidenav -->
-        @include('admin.partials.sidebar')
+        @include('layouts.partials.admin.sidebar')
         <!-- end left-sidenav-->
         <!-- Page Content-->
         <div class="page-content">
-            @yield('content')
+            <div class="container-fluid">
+                @yield('content')
+            </div>
             <!-- container -->
             <footer class="footer text-center text-sm-left">&copy; 2019 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span></footer>
             <!--end footer-->

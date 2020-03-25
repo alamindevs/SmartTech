@@ -12,11 +12,13 @@ class DashboardController extends Controller
     	# code...
     }
 
-   /**
-    * @return   [admin deshboard index blade]
-    */
+    /**
+     * [dashboard index view]
+     * @return [type] [blde templade view in dashboard index]
+     */
     public function dashboard()
     {
     	return view('admin.dashboard.index');
     }
+
 }

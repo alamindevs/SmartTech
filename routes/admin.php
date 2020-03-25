@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/logout',function(){
+	Auth::logout();
+});
+
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function(){
 	Route::get('/','DashboardController@dashboard')->name('dashboard');
+
+	Route::resource('/users','UserController');
 });
 
