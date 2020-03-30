@@ -11,12 +11,19 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('contants/admin') }}/assets/images/favicon.ico">
     <link href="{{ asset('contants/admin') }}/assets/plugins/pace/pace.css" rel="stylesheet">
+    <link href="{{ asset('contants/admin') }}/assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet">
+    <link href="{{ asset('contants/admin') }}/assets/plugins/toast/jquery.toast.css" rel="stylesheet">
     <!-- App css -->
     <link href="{{ asset('contants/admin') }}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('contants/admin') }}/assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('contants/admin') }}/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css">
     @stack('css')
     <link href="{{ asset('contants/admin') }}/assets/css/style.css" rel="stylesheet" type="text/css">
+    <style>
+        .invalid-feedback{
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <!-- Top Bar Start -->
@@ -44,7 +51,11 @@
     <script src="{{ asset('contants/admin') }}/assets/js/metisMenu.min.js"></script>
     <script src="{{ asset('contants/admin') }}/assets/js/waves.min.js"></script>
     <script src="{{ asset('contants/admin') }}/assets/js/jquery.slimscroll.min.js"></script>
+
     <script src="{{ asset('contants/admin') }}/assets/plugins/pace/pace.min.js"></script>
+    <script src="{{ asset('contants/admin') }}/assets/plugins/sweet-alert2/sweetalert2.min.js"></script>
+    <script src="{{ asset('contants/admin') }}/assets/plugins/toast/jquery.toast.js"></script>
+
     
     @stack('js')
     <!-- App js -->

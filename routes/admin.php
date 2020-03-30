@@ -23,5 +23,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 	Route::get('/','DashboardController@dashboard')->name('dashboard');
 
 	Route::resource('/users','UserController');
+
+	Route::get('/categoriesTrees','CategoryController@categoriesTrees')->name('categoryTree');
+	Route::get('/categoryAjax','CategoryController@getCategoryAjax')->name('getCategoryAjax');
+	Route::delete('/category/destroy','CategoryController@destroy')->name('category.destroy');
+	Route::resource('/category','CategoryController')->except('create', 'show', 'destroy');
 });
 

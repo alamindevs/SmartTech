@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Responses\CategoryResponse;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index');
+        // return view('admin.user.index');
+        // return User::all();
+        // return new CategoryResponse(User::all());
     }
 
     /**
