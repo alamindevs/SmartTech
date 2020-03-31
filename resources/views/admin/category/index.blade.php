@@ -69,7 +69,6 @@
         </div>
         <!-- end col -->
     </div>
-
 @endsection
 
 @push('js')
@@ -81,6 +80,6 @@
 <script src="{{ asset('contants/admin') }}/assets/pages/jquery.treeview.init.js"></script>
 
 <script>
-	
+    
 </script>
 @endpush
