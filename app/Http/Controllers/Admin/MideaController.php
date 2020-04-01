@@ -5,10 +5,19 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Midea;
 use Illuminate\Http\Request;
+use Freshbitsweb\Laratables\Laratables;
 use Storage;
+
 
 class MideaController extends Controller
 {
+
+    public function dataTableMidea()
+    {
+        return Laratables::recordsOf(Midea::class, function($query){
+            return $query->latest();
+        });
+    }
     /**
      * Display a listing of the resource.
      *
@@ -98,8 +107,24 @@ class MideaController extends Controller
      * @param  \App\Midea  $midea
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Midea $midea)
+    public function destroy(Request $request)
     {
-        //
+        $delete = Midea::find($request->id)->each( function ($image){
+            
+            $this->removeImage($image->path);
+            $image->delete();
+        });
+        if($delete){
+            return response()->json(['success' => 'Image successfully deleted!']);
+        }else{
+            return response()->json(['error' => 'Deleting failed! Please try again!']);
+        }
+    }
+
+    private function removeImage($path)
+    {
+        if(Storage::disk('public')->exists($path)){
+            Storage::disk('public')->delete($path);
+        }
     }
 }

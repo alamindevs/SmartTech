@@ -37,6 +37,8 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 	/**
 	 * All Midea Route
 	 */
-	Route::resource('/midea','MideaController')->except('create', 'show',);
+	Route::get('/midea/dataTable','MideaController@dataTableMidea')->name('midea.dataTable');
+	Route::delete('/midea/destroy','MideaController@destroy')->name('midea.destroy');
+	Route::resource('/midea','MideaController')->except('create', 'show','destroy');
 });
 

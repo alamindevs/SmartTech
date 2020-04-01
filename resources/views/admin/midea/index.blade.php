@@ -20,7 +20,7 @@
 		<div class="card">
 			<div class="card-header">
 				<h4 class="mt-2 header-title float-left">Media</h4>
-				<button class="btn-delete btn btn-danger btn-sm float-right mr-2" data-url="" disabled><i class="mdi mdi-delete"></i> Delete</button>
+				<button class="btn-delete btn btn-danger btn-sm float-right mr-2" data-url="{{ route('admin.midea.destroy') }}" disabled><i class="mdi mdi-delete"></i> Delete</button>
 			</div>
 
 			<div class="card-body">
@@ -36,6 +36,7 @@
 						<tr>
 							<th>Thumbnail</th>
 							<th>Filename</th>
+							<th>Date/Time</th>
 							<th>
 								<div class="custom-control custom-checkbox d-inline">
 									<input type="checkbox" class="check-all custom-control-input" id="horizontalCheckbox">
@@ -59,10 +60,12 @@
 
 @push('js')
 <script src="{{ asset('contants/admin') }}/assets/js/csrf.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/js/ajax.js"></script>
+
 <script src="{{ asset('contants/admin') }}/assets/plugins/dropzone/dropzone.js"></script>
 
 <script src="{{ asset('contants/admin') }}/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="{{ asset('contants/admin') }}/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 
 {{-- button use  --}}
     <script src="{{ asset('contants/admin') }}/assets/plugins/datatables/dataTables.buttons.min.js"></script>
@@ -79,25 +82,29 @@
     <script src="{{ asset('contants/admin') }}/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
 
 <script>
-// "myAwesomeDropzone" is the camelized version of the HTML element's ID
-Dropzone.options.myAwesomeDropzone = {
-  paramName: "file", // The name that will be used to transfer the file
-  maxFilesize: 2, // MB
-  init() {
-  	this.on("success", function(file) {
-  		console.log('data');
-  		// $('#datatable').DataTable().ajax.reload();
-  	});
-  },
-  
-  
+// "myDropzone" is the camelized version of the HTML element's ID
+Dropzone.options.myDropzone = {
+	paramName: "file",
+	acceptedFiles:".jpeg,.jpg,.png,.gif",
+	maxFilesize: 2,
+	init() {
+		this.on("success", function(file) {
+			$('#datatable').DataTable().ajax.reload();
+		});
+	}
 };
 
-
-
 $("#datatable").DataTable({
-       
-    
-    })
+	serverSide: true,
+	ajax: "{{ route('admin.midea.dataTable') }}",
+	columns: [
+	{ name: 'path' },
+	{ name: 'name' },
+	{ name: 'created_at', orderable: false},
+	{ name: 'action', orderable: false, searchable: false},
+	
+	],
+
+})
 </script>
 @endpush
