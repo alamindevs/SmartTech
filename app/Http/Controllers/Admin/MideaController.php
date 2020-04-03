@@ -15,7 +15,7 @@ class MideaController extends Controller
     public function dataTableMidea()
     {
         return Laratables::recordsOf(Midea::class, function($query){
-            return $query->latest();
+            return $query->latest('id');
         });
     }
     /**
@@ -121,6 +121,11 @@ class MideaController extends Controller
         }
     }
 
+    /**
+     * [removeImage common function in remove file/image]
+     * @param  [string] $path [peramiter]
+     * @return [type]       [description]
+     */
     private function removeImage($path)
     {
         if(Storage::disk('public')->exists($path)){

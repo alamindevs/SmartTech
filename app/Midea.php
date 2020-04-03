@@ -15,14 +15,18 @@ class Midea extends Model
      */
     protected $fillable = ['name','path','extension','size'];
 
+    /**
+     * [path Midea file patha]
+     * @return [string] [file path return ]
+     */
     public function path()
     {
     	return 'storage/'.$this->path;
     }
     /**
-	 * Returns truncated name for the datatables.
+	 * Returns truncated path for the datatables.
 	 *
-	 * @param \App\User
+	 * @param \App\Midea
 	 * @return string
 	 */
     public static function laratablesPath($midea)
@@ -30,6 +34,11 @@ class Midea extends Model
     	return '<img height="50" src=" ' . asset($midea->path()) .'" alt="{{ $midea->name }}">';
     }
 
+    /**
+     * [laratablesCreatedAt Date time format]
+     * @param  [type] $midea [peramitar ]
+     * @return [type]        [string date time ]
+     */
     public static function laratablesCreatedAt($midea)
     {
     	return $midea->created_at->diffForHumans();
@@ -39,7 +48,7 @@ class Midea extends Model
     /**
 	 * Returns the action column html for datatables.
 	 *
-	 * @param \App\User
+	 * @param \App\Midea
 	 * @return string
 	 */
     public static function laratablesCustomAction($action)

@@ -1,37 +1,26 @@
-@extends('layouts.admin') 
-
-@section('pageTitle','Admin Deshboard')
-
 @push('css')
     <link href="{{ asset('contants/admin') }}/assets/plugins/dropzone/dropzone.css" rel="stylesheet">
-
-	 <link href="{{ asset('contants/admin') }}/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+	<link href="{{ asset('contants/admin') }}/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('contants/admin') }}/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css">
 @endpush
-
-@section('content')
-
-@component('components.admin.breadcrumb')
-<li class="breadcrumb-item active">Dashboard</li>
-@endcomponent
-
-<div class="row">
-	<div class="col-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="mt-2 header-title float-left">Media</h4>
-				<button class="btn-delete btn btn-danger btn-sm float-right mr-2" data-url="{{ route('admin.midea.destroy') }}" disabled><i class="mdi mdi-delete"></i> Delete</button>
-			</div>
-
-			<div class="card-body">
-				<form action="{{ route('admin.midea.store') }}" method="post" class="dropzone mb-3" enctype="multipart/form-data" id="myDropzone">
+<!-- end row  -->
+<div id="exampleModal" class="modal fade animated bd-example-modal-xl mid-y-scroll" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0 mr-2" id="myModalLabel">Midea Maneger</h5>
+                <button class="btn-delete btn btn-danger btn-xs float-right mr-2" data-url="{{ route('admin.midea.destroy') }}" disabled><i class="mdi mdi-delete"></i> Delete</button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body" style="background: #ffffff;">
+                <form action="{{ route('admin.midea.store') }}" method="post" class="dropzone mb-3" enctype="multipart/form-data" id="myDropzone">
 					@csrf
 					<div class="fallback">
 						<input name="file" type="file" multiple />
 					</div>
 				</form>
 
-				<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 					<thead>
 						<tr>
 							<th>Thumbnail</th>
@@ -46,21 +35,16 @@
 						</tr>
 					</thead>
 				</table>
-			</div>
-		</div>
-	</div>
-	<!-- end col -->
-</div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-
-
-
-
-@endsection
 
 @push('js')
 <script src="{{ asset('contants/admin') }}/assets/js/csrf.js"></script>
 <script src="{{ asset('contants/admin') }}/assets/js/ajax.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/js/midea.js"></script>
 
 <script src="{{ asset('contants/admin') }}/assets/plugins/dropzone/dropzone.js"></script>
 

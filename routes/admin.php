@@ -40,5 +40,15 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 	Route::get('/midea/dataTable','MideaController@dataTableMidea')->name('midea.dataTable');
 	Route::delete('/midea/destroy','MideaController@destroy')->name('midea.destroy');
 	Route::resource('/midea','MideaController')->except('create', 'show','destroy');
+
+	/**
+	 * All Brand Route
+	 */
+	
+	Route::get('/brand/dataTable','BrandController@dataTableBrand')->name('brand.dataTable');
+	Route::delete('/brand/destroy','BrandController@destroy')->name('brand.destroy');
+	Route::put('/brand/{brand}/update','BrandController@updateStatus')->name('brand.status');
+	Route::resource('/brand','BrandController')->except('destroy','show');
+	
 });
 

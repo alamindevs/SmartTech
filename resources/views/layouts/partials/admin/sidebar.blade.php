@@ -99,7 +99,7 @@
         <div class="menu-body slimscroll">
             <div id="MetricaAnalytic" class="main-icon-menu-pane">
                 <div class="title-box">
-                    <h6 class="menu-title">Analytics</h6></div>
+                    <h6 class="menu-title">Dasboard</h6></div>
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="dripicons-meter"></i>Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="../analytics/analytics-customers.html"><i class="dripicons-user-group"></i>Customers</a></li>
@@ -135,7 +135,7 @@
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link" href="ecommerce-index.html"><i class="dripicons-shopping-bag"></i>Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.category.index') }}"><i class="dripicons-view-list"></i>Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ecommerce-product-list.html"><i class="dripicons-article"></i>Brands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.brand.index') }}"><i class="dripicons-article"></i>Brands</a></li>
                     <li class="nav-item"><a class="nav-link" href="ecommerce-product-detail.html"><i class="dripicons-scale"></i>Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="ecommerce-cart.html"><i class="dripicons-view-list-large"></i>Feature Sets</a></li>
                     <li class="nav-item"><a class="nav-link" href="ecommerce-checkout.html"><i class="dripicons-card"></i>Options</a></li>
