@@ -66,6 +66,13 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 	Route::put('/attribute/{attribute}/update','AttributeController@updateStatus')->name('attribute.status'); // status update route  
 	Route::resource('/attribute','AttributeController')->except('destroy','show');
 
+	/**
+	 * All Option
+	 */
+	Route::get('/option/dataTable','OptionController@dataTableOption')->name('option.dataTable');
+	Route::delete('/option/destroy','OptionController@destroy')->name('option.destroy');
+	Route::resource('/option','OptionController')->except('destroy','show');
+
 
 });
 
