@@ -136,8 +136,8 @@
                     <li class="nav-item"><a class="nav-link" href="ecommerce-index.html"><i class="dripicons-shopping-bag"></i>Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.category.index') }}"><i class="dripicons-view-list"></i>Categories</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.brand.index') }}"><i class="dripicons-article"></i>Brands</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ecommerce-product-detail.html"><i class="dripicons-scale"></i>Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ecommerce-cart.html"><i class="dripicons-view-list-large"></i>Feature Sets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.attribute.index') }}"><i class="dripicons-scale"></i>Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.attribute-set.index') }}"><i class="dripicons-view-list-large"></i>Feature Sets</a></li>
                     <li class="nav-item"><a class="nav-link" href="ecommerce-checkout.html"><i class="dripicons-card"></i>Options</a></li>
                     <li class="nav-item"><a class="nav-link" href="ecommerce-checkout.html"><i class="dripicons-bookmarks"></i>Review</a></li>
                     <li class="nav-item"><a class="nav-link" href="ecommerce-checkout.html"><i class="dripicons-card"></i>Coupons</a></li>

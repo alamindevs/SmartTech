@@ -47,8 +47,25 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 	
 	Route::get('/brand/dataTable','BrandController@dataTableBrand')->name('brand.dataTable');
 	Route::delete('/brand/destroy','BrandController@destroy')->name('brand.destroy');
-	Route::put('/brand/{brand}/update','BrandController@updateStatus')->name('brand.status');
+	Route::put('/brand/{brand}/update','BrandController@updateStatus')->name('brand.status'); // status update route  
 	Route::resource('/brand','BrandController')->except('destroy','show');
 	
+	/**
+	 * All Attribute Set
+	 */
+	Route::get('/attribute-set/dataTable','AttributeSetController@dataTableAttributeset')->name('attribute-set.dataTable');
+	Route::delete('/attribute-set/destroy','AttributeSetController@destroy')->name('attribute-set.destroy');
+	Route::put('/attribute-set/{attribute_set}/update','AttributeSetController@updateStatus')->name('attribute-set.status'); // status update route  
+	Route::resource('/attribute-set','AttributeSetController')->except('destroy','show');
+
+	/**
+	 * All Attribute 
+	 */
+	Route::get('/attribute/dataTable','AttributeController@dataTableAttribute')->name('attribute.dataTable');
+	Route::delete('/attribute/destroy','AttributeController@destroy')->name('attribute.destroy');
+	Route::put('/attribute/{attribute}/update','AttributeController@updateStatus')->name('attribute.status'); // status update route  
+	Route::resource('/attribute','AttributeController')->except('destroy','show');
+
+
 });
 
