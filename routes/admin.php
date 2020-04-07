@@ -73,6 +73,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 	Route::delete('/option/destroy','OptionController@destroy')->name('option.destroy');
 	Route::resource('/option','OptionController')->except('destroy','show');
 
+	/**
+	 * All Product
+	 */
+	Route::resource('/product','ProductController')->except('destroy');
 
 });
 
