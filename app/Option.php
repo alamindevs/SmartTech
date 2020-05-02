@@ -17,7 +17,7 @@ class Option extends Model
      * @return [type] [description]
      */
     public function values() {
-    	return $this->hasMany(OptionValue::class);
+        return $this->hasMany(OptionValue::class);
     }
     /**
 	 * Returns the action column html for datatables.

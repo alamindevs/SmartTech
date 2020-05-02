@@ -11,7 +11,7 @@
 @endif
 
 @if($view ?? true)
-<a href="{{-- {{ route('admin.' . $route . '.show', $action->id) }} --}}"><i class="far fa-eye text-info mr-1 mt-1 font-16"></i></a>
+<a href="{{ route('admin.' . $route . '.show', $action->id) }}"><i class="far fa-eye text-info mr-1 mt-1 font-16"></i></a>
 @endif
 @if($edit ?? true)
 <a href="{{ route('admin.' . $route . '.edit', $action->id) }}"><i class="far fa-edit text-info mr-1 mt-1 font-16"></i></a>

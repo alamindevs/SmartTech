@@ -133,7 +133,7 @@
                 <div class="title-box">
                     <h6 class="menu-title">Ecommerce</h6></div>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="ecommerce-index.html"><i class="dripicons-shopping-bag"></i>Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.product.index') }}"><i class="dripicons-shopping-bag"></i>Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.category.index') }}"><i class="dripicons-view-list"></i>Categories</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.brand.index') }}"><i class="dripicons-article"></i>Brands</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.attribute.index') }}"><i class="dripicons-scale"></i>Features</a></li>

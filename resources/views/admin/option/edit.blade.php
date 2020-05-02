@@ -56,7 +56,6 @@
                                         <div class="col-sm-3">
                                             <label class="control-label">Price Type</label>
                                             <select name="price_type" class="form-control">
-                                                <option value="" {{ $value->price_type == Null ? 'selected' : '' }}>--Select Price Type--</option>
                                                 <option value="fixed" {{ $value->price_type == 'fixed' ? 'selected' : '' }} >Fixed</option>
                                                 <option value="percent" {{ $value->price_type == 'percent' ? 'percent' : '' }} >Percent</option>
                                             </select>

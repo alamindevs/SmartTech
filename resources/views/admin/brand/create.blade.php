@@ -36,7 +36,7 @@
 						</div>
 					</div>
 
-					<button type="button" class="image-picker btn btn-light waves-effect waves-light d-block mt-3 mb-3"  data-image="single" data-name="image" data-toggle="modal" data-target="#exampleModal"><i class="far fa-folder-open mr-2"></i> Browse Image</button>
+					<button type="button" class="image-picker btn btn-light waves-effect waves-light d-block mt-3 mb-3"  data-image="single" data-name="image"><i class="far fa-folder-open mr-2"></i> Browse Image</button>
 
 					<div class="form-check-inline my-2">
 						<div class="custom-control custom-checkbox">
@@ -61,3 +61,9 @@
 </x-admin.mideamodal>
 
 @endsection
+
+@push('js')
+	
+<script src="{{ asset('contants/admin') }}/assets/js/csrf.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/js/ajax.js"></script>
+@endpush

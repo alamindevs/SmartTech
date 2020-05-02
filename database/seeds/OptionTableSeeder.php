@@ -19,11 +19,13 @@ class OptionTableSeeder extends Seeder
         Option::insert([
             [
                 'name' => 'Size',
-                'type' => 'radio'
+                'type' => 'radio',
+                'is_global' => (bool) true
             ],
             [
 	            'name' => 'Color',
-	            'type' => 'radio'
+	            'type' => 'radio',
+                'is_global' => (bool) true
 	        ]
         ]);
     }

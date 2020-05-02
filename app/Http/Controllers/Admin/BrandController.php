@@ -50,7 +50,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required|string|max:190',
+            'name' => 'required|string|max:190|unique:brands',
             'tagline' => 'nullable|string|max:190',
         ]);
 
@@ -102,7 +102,7 @@ class BrandController extends Controller
     public function update(Request $request, Brand $brand)
     {
          $this->validate($request,[
-            'name' => 'required|string|max:190',
+            'name' => 'required|string|max:190|unique:brands,name,'.$brand->id,
             'tagline' => 'nullable|string|max:190',
         ]);
 
@@ -150,9 +150,9 @@ class BrandController extends Controller
 
         if ($statusUpdate) {
             if ($brand->status) {
-                return response()->json(['success' => 'Product successfullly published!']);
+                return response()->json(['success' => 'Brand successfullly published!']);
             }else{
-                return response()->json(['success' => 'Product successfullly unpublished!']);
+                return response()->json(['success' => 'Brand successfullly unpublished!']);
             }
         }else{
             return response()->json(['error' => 'Ops! please try again!']);

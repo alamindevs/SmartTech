@@ -68,3 +68,8 @@
 </x-admin.mideamodal>
 
 @endsection
+
+@push('js')
+<script src="{{ asset('contants/admin') }}/assets/js/csrf.js"></script>
+<script src="{{ asset('contants/admin') }}/assets/js/ajax.js"></script>
+@endpush

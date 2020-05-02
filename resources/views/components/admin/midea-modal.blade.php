@@ -42,8 +42,6 @@
 
 
 @push('js')
-<script src="{{ asset('contants/admin') }}/assets/js/csrf.js"></script>
-<script src="{{ asset('contants/admin') }}/assets/js/ajax.js"></script>
 <script src="{{ asset('contants/admin') }}/assets/js/midea.js"></script>
 
 <script src="{{ asset('contants/admin') }}/assets/plugins/dropzone/dropzone.js"></script>

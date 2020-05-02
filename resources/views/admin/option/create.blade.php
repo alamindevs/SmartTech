@@ -55,7 +55,6 @@
                                         <div class="col-sm-3">
                                             <label class="control-label">Price Type</label>
                                             <select name="price_type" class="form-control">
-                                                <option value="" selected >--Select Price Type--</option>
                                                 <option value="fixed">Fixed</option>
                                                 <option value="percent">Percent</option>
                                             </select>

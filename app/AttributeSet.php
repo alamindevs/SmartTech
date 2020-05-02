@@ -13,6 +13,14 @@ class AttributeSet extends Model
     protected $fillable = ['name','slug','status'];
 
     /**
+     * [attributes description]
+     * @return [type] [description]
+     */
+    public function attributes()
+    {
+        return $this->hasMany(Attribute::class);
+    }
+    /**
 	 * Returns the action column html for datatables.
 	 * @param \App\AttributeSet
 	 * @return string
