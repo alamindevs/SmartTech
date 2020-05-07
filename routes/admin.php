@@ -78,11 +78,20 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 	 */
 	Route::get('/attribute/values/{attribute}','ProductController@attributeValues');// ajax attrivute
 	Route::get('/option/values/{option}','ProductController@optionValues'); // ajax option
-	
+	Route::get('/getProducts','ProductController@getProducts');
+
 	Route::get('/product/dataTable','ProductController@dataTableProduct')->name('product.dataTable');
 	Route::delete('/option/destroy','ProductController@destroy')->name('product.destroy');
 	Route::put('/product/{product}/update','ProductController@updateStatus')->name('product.status'); // status update route  
 	Route::resource('/product','ProductController')->except('destroy');
+
+	/**
+	 * coupon
+	 */
+	Route::get('/coupon/dataTable','CouponController@dataTableCoupon')->name('coupon.dataTable');
+	Route::delete('/option/destroy','CouponController@destroy')->name('coupon.destroy');
+	Route::put('/coupon/{coupon}/update','CouponController@updateStatus')->name('coupon.status'); // status update route  
+	Route::resource('/coupon','CouponController')->except('destroy','show');
 
 });
 

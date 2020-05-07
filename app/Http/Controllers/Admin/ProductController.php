@@ -25,6 +25,11 @@ class ProductController extends Controller
             return $query->latest('id');
         });
     }
+
+    public function getProducts()
+    {
+        return response()->json( Product::all());
+    }
     /**
      * Display a listing of the resource.
      *

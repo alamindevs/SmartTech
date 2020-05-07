@@ -140,7 +140,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.attribute-set.index') }}"><i class="dripicons-view-list-large"></i>Feature Sets</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.option.index') }}"><i class="dripicons-card"></i>Options</a></li>
                     <li class="nav-item"><a class="nav-link" href="ecommerce-checkout.html"><i class="dripicons-bookmarks"></i>Review</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ecommerce-checkout.html"><i class="dripicons-card"></i>Coupons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.coupon.index') }}"><i class="dripicons-card"></i>Coupons</a></li>
                 </ul>
             </div>
             <!-- end Ecommerce -->
