@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    echo 'alamin';
     return view('welcome');
 });
 Route::group(['namespace' => 'Website'], function(){
